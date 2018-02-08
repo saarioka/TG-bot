@@ -1,4 +1,4 @@
-# Telegram-bot Big Shaq  
+# Telegram bot Big Shaq  
 Working features:  
 -State monitoring in shell  
 -Events:  
