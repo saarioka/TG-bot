@@ -1,17 +1,18 @@
 # Telegram bot Big Shaq  
 Working features:  
--State monitoring in shell  
+-State monitoring in shell    
 -Events:  
 	lyrics  
 	kiitos  
 	greetings  
-	pilasib  
--Commands:  
+	pilasib    
+-Commands:    
 	ruoka (Hertsi & Reaktori)  
-	vitsi (actual jokes removad as too cringy)  
+	vitsi (actual jokes removad as too cringy)   
+-Callback query skeleton working but no implemented    
   
 TODO:  
 	ruoka (Juvenes)  
 	admin commands  
-	kysely & general callback query handling  
+	applications for callback query  
 	
