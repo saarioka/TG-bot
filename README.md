@@ -8,7 +8,7 @@ Working features:
 	pilasib  
 -Commands:  
 	ruoka (Hertsi & Reaktori)  
-	vitsi (cringy)  
+	vitsi (actual jokes removad as too cringy)  
   
 TODO:  
 	ruoka (Juvenes)  
