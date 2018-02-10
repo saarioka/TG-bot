@@ -8,7 +8,7 @@ Working features:
 	pilasib    
 -Commands:    
 	ruoka (Hertsi & Reaktori)  
-	vitsi (actual jokes removad as too cringy)   
+	vitsi (actual jokes removed as too cringy)   
 -Callback query skeleton working but no implemented    
   
 TODO:  
