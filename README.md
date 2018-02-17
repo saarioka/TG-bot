@@ -1,4 +1,8 @@
 # Telegram bot Big Shaq  
+
+This is a telegram bot based on the public "Telepot" API  
+
+
 Working features:  
 -State monitoring in shell    
 -Events:  
