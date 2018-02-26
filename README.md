@@ -12,12 +12,15 @@ Working features:
 	pilasib    
 -Commands(proc by /<command>):    
 	ruoka (Hertsi & Reaktori)  
-	vitsi (actual jokes removed as too cringy)   
--Callback query skeleton working but not implemented    
+ 
+-Callback query skeleton working but not implemented yet  
+
+-AI based on Chatterbot API  
   
 TODO:  
 	ruoka (Juvenes)  
 	admin commands  
 	applications for callback query (on-screen buttons/custom keyboard)  
+	improvements to AI  
 	
 Santeri Saariokari 2/2018
