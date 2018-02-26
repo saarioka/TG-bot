@@ -102,7 +102,5 @@ ENV/
 lit.txt
 lit2.txt
 lyhyt.txt
-db.*
-dev/db.sqlite3-shm
-dev/db.sqlite3-wal
-dev/db.sqlite3
+dev/db.*
+release/db.*
