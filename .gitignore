@@ -104,3 +104,4 @@ lit2.txt
 lyhyt.txt
 dev/db.*
 release/db.*
+dev/db.sqlite3

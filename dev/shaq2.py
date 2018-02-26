@@ -33,7 +33,7 @@ class Shaq(telepot.helper.ChatHandler):
         self._startup_time = time.time()
 
         self.bumper = ''
-        self.msglist = []
+        self.msg_list = []
         self.keyboard = ReplyKeyboardRemove()
 
         #chatter
@@ -98,21 +98,19 @@ class Shaq(telepot.helper.ChatHandler):
 
     def pilasib(self, msg):
         lyrics_match = []
+
         for i in range(len(self._lyrics)):
-            if msg['text'].lower() in self._lyrics[i].lower() and len(msg['text']) > 3:
-                lyrics_match.append(self._lyrics[i])
-        if len(lyrics_match) > 0:
-            rand = random.randint(0, len(lyrics_match))
-            try:
-                self.sender.sendMessage(lyrics_match[rand] + '\n' + lyrics_match[rand + 1])
-                self.print_time_out(msg)
-            except IndexError:
+            if len(msg['text']) > 3 and msg['text'].lower() in self._lyrics[i].lower():
                 try:
-                    self.sender.sendMessage(lyrics_match[rand - 1] + '\n' + lyrics_match[rand])
-                    self.print_time_out(msg)
-                    print(len(lyrics_match))
-                except IndexError:
-                    self.sender.sendMessage(random.choice(lyrics_match))
+                    lyrics_match.append(self._lyrics[i] + '\n' + self._lyrics[i+1])
+
+                except IndexError: # end of file
+                    lyrics_match.append(self._lyrics[i-1] + '\n' + self._lyrics[i])
+
+        if len(lyrics_match) > 0:
+            rand = random.randint(0, len(lyrics_match)-1)
+            self.sender.sendMessage(lyrics_match[rand])
+            self.print_time_out(msg)
             print('lyrics (matches: ' + str(len(lyrics_match)) + ')')
 
     def Vitsi(self):
@@ -136,11 +134,11 @@ class Shaq(telepot.helper.ChatHandler):
 
         self.keyboard = InlineKeyboardMarkup(inline_keyboard=[[
             InlineKeyboardButton(text='Hertsi', callback_data='/hertsi'),
-            InlineKeyboardButton(text='Reaktori', callback_data='/reaktori'),
+            InlineKeyboardButton(text='Hertsi\nkaikki', callback_data='/hertsi2'),
         ], [InlineKeyboardButton(text='<<<', callback_data='/cancel'),
-            InlineKeyboardButton(text='Vitsi', callback_data='/vitsi')]])
+            InlineKeyboardButton(text='Reaktori', callback_data='/reaktori')]])
 
-        bot.sendMessage(chat_id, 'Mitä laitetaan?', reply_markup=self.keyboard)
+        #bot.sendMessage(chat_id, 'Mitä laitetaan?', reply_markup=self.keyboard)
 
     def on_callback_query(self, msg):
         query_id, from_id, query_data = telepot.glance(msg, flavor='callback_query')
@@ -151,12 +149,12 @@ class Shaq(telepot.helper.ChatHandler):
         if query_data == '/reaktori':
             self.sender.sendMessage(Reaktori.ruoka(1))
 
-        #if query_data == '/cancel':
-            #TODO
+        if query_data == '/hertsi2':
+            self.sender.sendMessage(Hertsi.ruoka(2))
             #self.bot.editMessageReplyMarkup(msg['message_id'], reply_markup=False, )
 
-        if query_data == '/vitsi':
-            print("Ei.")
+        if query_data == '/cancel':
+            self.sender.sendMessage('TODO')
 
         self.bot.answerCallbackQuery(query_id)
 
@@ -179,27 +177,24 @@ class Shaq(telepot.helper.ChatHandler):
                 print(msg['text'])
 
                 # Adds message to list if there is no combo on other chat
-                if len(self.msglist) > 1:
-                    if (not (self.msglist[-2]['text'].lower() == self.msglist[-1]['text'].lower()
-                             and self.msglist[-2]['chat']['id'] == self.msglist[-1]['chat']['id']
-                             and msg['chat']['id'] != self.msglist[-1]['chat']['id'])):
-                        self.msglist.append(msg)
+                if len(self.msg_list) > 1:
+                    if (not (self.msg_list[-2]['text'].lower() == self.msg_list[-1]['text'].lower()
+                             and self.msg_list[-2]['chat']['id'] == self.msg_list[-1]['chat']['id']
+                             and msg['chat']['id'] != self.msg_list[-1]['chat']['id'])):
+                        self.msg_list.append(msg)
                 else:
-                    self.msglist.append(msg)
+                    self.msg_list.append(msg)
 
                 # pilasib
-                if (len(self.msglist) > 2
-                        and self.msglist[-3]['text'].lower() == self.msglist[-2]['text'].lower()
-                        and self.msglist[-2]['text'].lower() != self.msglist[-1]['text'].lower()
-                        and self.msglist[-3]['chat']['id'] == self.msglist[-2]['chat']['id']
-                        and self.msglist[-2]['chat']['id'] == self.msglist[-1]['chat']['id']):
+                if (len(self.msg_list) > 2
+                        and self.msg_list[-3]['text'].lower() == self.msg_list[-2]['text'].lower()
+                        and self.msg_list[-2]['text'].lower() != self.msg_list[-1]['text'].lower()
+                        and self.msg_list[-3]['chat']['id'] == self.msg_list[-2]['chat']['id']
+                        and self.msg_list[-2]['chat']['id'] == self.msg_list[-1]['chat']['id']):
                     self.sender.sendMessage('pilasib')
                     self.print_time_out(msg)
                     print('pilasib')
 
-                # lyrics
-                elif msg['text'].lower() == '/lyrics':
-                    self.lyrics(msg)
 
                 # greetings
                 elif msg['text'].lower() in greetings_in:
@@ -209,26 +204,30 @@ class Shaq(telepot.helper.ChatHandler):
                 elif msg['text'].lower().find('kiitos') == 0:
                     self.kiitos(msg)
 
-                # Command:hertsi1
-                elif msg['text'].lower().find('/hertsi') == 0:
+                # Command: lyrics
+                elif msg['text'] == '/lyrics':
+                    self.lyrics(msg)
+
+                # Command: hertsi1
+                elif msg['text'] == '/hertsi':
                     self.sender.sendMessage(Hertsi.ruoka(1))
                     self.print_time_out(msg)
                     print('hertsi1')
 
-                # Command:hertsi2
-                elif msg['text'].lower().find('/hertsi2') == 0:
+                # Command: hertsi2
+                elif msg['text'] == '/hertsi2':
                     self.sender.sendMessage(Hertsi.ruoka(2))
                     self.print_time_out(msg)
                     print('hertsi2')
 
-                # Command:Reaktori1
-                elif msg['text'].lower().find('/reaktori') == 0:
+                # Command: Reaktori1
+                elif msg['text'] == '/reaktori':
                     self.sender.sendMessage(Reaktori.ruoka(1))
                     self.print_time_out(msg)
                     print('reaktori1')
 
-                # Command:Reaktori2
-                elif msg['text'].lower().find('/reaktori2') == 0:
+                # Command: Reaktori2
+                elif msg['text'] == '/reaktori2':
                     self.sender.sendMessage(Reaktori.ruoka(2))
                     self.print_time_out(msg)
                     print('reaktori2')
@@ -237,6 +236,7 @@ class Shaq(telepot.helper.ChatHandler):
                 elif msg['text'].lower().find('/kysely') == 0:
                     self.kysely(msg)
 
+                # chatter
                 else:
                     self.bumper += msg['text'] + '\n'
 
@@ -253,12 +253,12 @@ class Shaq(telepot.helper.ChatHandler):
                         print(response)
                         self.bumper = ''
 
-                # Command:lyrics
+                # Command:lyrics (includes)
                 self.pilasib(msg)
 
                 # Deletes old message(s) from list
-                if len(self.msglist) > 1 and self.msglist[-1]['text'].lower() != self.msglist[-2]['text'].lower():
-                    del self.msglist[0:-2]
+                if len(self.msg_list) > 1 and self.msg_list[-1]['text'].lower() != self.msg_list[-2]['text'].lower():
+                    del self.msg_list[0:-2]
 
         except KeyError:
             print('Sticker/Picture/Other')
