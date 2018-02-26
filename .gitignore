@@ -105,3 +105,6 @@ lyhyt.txt
 dev/db.*
 release/db.*
 dev/db.sqlite3
+dev/db.sqlite3-shm
+dev/db.sqlite3-wal
+dev/db.sqlite3

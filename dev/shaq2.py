@@ -134,11 +134,11 @@ class Shaq(telepot.helper.ChatHandler):
 
         self.keyboard = InlineKeyboardMarkup(inline_keyboard=[[
             InlineKeyboardButton(text='Hertsi', callback_data='/hertsi'),
-            InlineKeyboardButton(text='Hertsi\nkaikki', callback_data='/hertsi2'),
+            InlineKeyboardButton(text='Hertsi kaikki', callback_data='/hertsi2'),
         ], [InlineKeyboardButton(text='<<<', callback_data='/cancel'),
             InlineKeyboardButton(text='Reaktori', callback_data='/reaktori')]])
 
-        #bot.sendMessage(chat_id, 'Mitä laitetaan?', reply_markup=self.keyboard)
+        bot.sendMessage(chat_id, 'Mitä tänään syötäisiin?', reply_markup=self.keyboard)
 
     def on_callback_query(self, msg):
         query_id, from_id, query_data = telepot.glance(msg, flavor='callback_query')
@@ -232,8 +232,8 @@ class Shaq(telepot.helper.ChatHandler):
                     self.print_time_out(msg)
                     print('reaktori2')
 
-                # kysely
-                elif msg['text'].lower().find('/kysely') == 0:
+                # Command: kysely
+                elif msg['text'] == '/kysely':
                     self.kysely(msg)
 
                 # chatter
