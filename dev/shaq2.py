@@ -30,7 +30,9 @@ class Shaq(telepot.helper.ChatHandler):
         with open('C:/Users/Santeri/Documents/Python/TG-bot/release/lyrics.txt') as f:
             self._lyrics = f.readlines()
         self._lyrics = [x.strip() for x in self._lyrics]
-        self._aloitusaika = time.time() - 10
+        self._startup_time = time.time()
+
+        self.bumper = ''
         self.msglist = []
         self.keyboard = ReplyKeyboardRemove()
 
@@ -162,9 +164,12 @@ class Shaq(telepot.helper.ChatHandler):
     def on_chat_message(self, msg):
         try:
             greetings_in = ['moi', 'hei shaq', 'yo', 'yoyo', 'helou', "moi shaq", "hei", "moikka", "moikka shaq"]
-            if msg['date'] < self._aloitusaika:
+
+            # old message, don't answer
+            if msg['date'] < self._startup_time - 10:
                 self.print_time_in(msg)
                 print(msg['text'])
+
             else:
                 if msg["from"]["id"] == 340000985 and msg['text'].lower().find('sudo') == 0:
                     self.admin(msg)
@@ -232,13 +237,21 @@ class Shaq(telepot.helper.ChatHandler):
                 elif msg['text'].lower().find('/kysely') == 0:
                     self.kysely(msg)
 
-                elif msg['date'] > time.time() - 90:
-                    print('chatter proc')
-                    request = msg['text'].lower()
-                    response = self.chatter.get_response(request)
-                    self.sender.sendMessage(str(response))
-                    self.print_time_out(msg)
-                    print(response)
+                else:
+                    self.bumper += msg['text'] + '\n'
+
+                    if msg['date'] > time.time() - 5:
+                        if len(self.bumper) > 0:
+                            self.bumper = self.bumper[:-1]
+
+                        print(self.bumper)
+                        request = self.bumper.lower()
+                        response = self.chatter.get_response(request)
+
+                        self.sender.sendMessage(str(response))
+                        self.print_time_out(msg)
+                        print(response)
+                        self.bumper = ''
 
                 # Command:lyrics
                 self.pilasib(msg)
@@ -256,7 +269,7 @@ TOKEN = '508099832:AAHaxtIpOdxLBKtvcMaZHVXKihKiUoHk0l0'
 bot = telepot.DelegatorBot(TOKEN, [
     include_callback_query_chat_id(
         pave_event_space())(
-        per_chat_id(), create_open, Shaq, timeout=100000
+        per_chat_id(), create_open, Shaq, timeout=10000
     ),
 ])
 MessageLoop(bot).run_as_thread()
