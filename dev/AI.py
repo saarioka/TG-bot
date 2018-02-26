@@ -22,13 +22,9 @@ def alusta_tiedosto():
 
 
 alusta_tiedosto()
-
 bot = ChatBot("Shaq")
-
 keskustelu = open("lit2.txt", "r", encoding="utf8").readlines()
-
 bot.set_trainer(ListTrainer)
-
 #bot.train(keskustelu)
 
 while True:
