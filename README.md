@@ -5,18 +5,20 @@ This is a telegram bot based on the public "Telepot" API, written as an introduc
 
 Working features:  
 -State monitoring in shell    
+  
 -Events(proc by message):  
 	lyrics  
 	kiitos  
 	greetings  
 	pilasib    
+	
 -Commands(proc by /<command>):    
 	ruoka (Hertsi & Reaktori)  
- 
+   
 -Callback query skeleton working but not implemented yet  
-
--AI based on Chatterbot API  
   
+-AI based on Chatterbot API  
+   
 TODO:  
 	ruoka (Juvenes)  
 	admin commands  
