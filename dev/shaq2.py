@@ -14,7 +14,7 @@ from telepot.delegate import (
     per_chat_id, create_open, pave_event_space, include_callback_query_chat_id)
 
 # ruoka
-from Ruokalistat import Reaktori, Hertsi
+from Ruokalistat import Reaktori, Hertsi, Juvenes
 
 # chatterbot
 from chatterbot.trainers import ListTrainer
@@ -135,8 +135,8 @@ class Shaq(telepot.helper.ChatHandler):
         self.keyboard = InlineKeyboardMarkup(inline_keyboard=[[
             InlineKeyboardButton(text='Hertsi', callback_data='/hertsi'),
             InlineKeyboardButton(text='Hertsi kaikki', callback_data='/hertsi2'),
-        ], [InlineKeyboardButton(text='<<<', callback_data='/cancel'),
-            InlineKeyboardButton(text='Reaktori', callback_data='/reaktori')]])
+        ], [InlineKeyboardButton(text='Reaktori', callback_data='/reaktori'),
+            InlineKeyboardButton(text='Reaktori kaikki', callback_data='/reaktori2')]])
 
         bot.sendMessage(chat_id, 'Mitä tänään syötäisiin?', reply_markup=self.keyboard)
 
@@ -146,15 +146,14 @@ class Shaq(telepot.helper.ChatHandler):
         if query_data == '/hertsi':
             self.sender.sendMessage(Hertsi.ruoka(1))
 
+        if query_data == '/hertsi2':
+            self.sender.sendMessage(Hertsi.ruoka(2))
+
         if query_data == '/reaktori':
             self.sender.sendMessage(Reaktori.ruoka(1))
 
-        if query_data == '/hertsi2':
-            self.sender.sendMessage(Hertsi.ruoka(2))
-            #self.bot.editMessageReplyMarkup(msg['message_id'], reply_markup=False, )
-
-        if query_data == '/cancel':
-            self.sender.sendMessage('TODO')
+        if query_data == '/reaktori2':
+            self.sender.sendMessage(Reaktori.ruoka(2))
 
         self.bot.answerCallbackQuery(query_id)
 
@@ -235,6 +234,18 @@ class Shaq(telepot.helper.ChatHandler):
                 # Command: kysely
                 elif msg['text'] == '/kysely':
                     self.kysely(msg)
+
+                # Command: juvenes
+                elif msg['text'] == '/juvenes':
+                    self.sender.sendMessage(Juvenes.ruoka(1))
+                    self.print_time_out(msg)
+                    print('juvenes')
+
+                # Command: juvenes
+                elif msg['text'] == '/juvenes2':
+                    self.sender.sendMessage(Juvenes.ruoka(2))
+                    self.print_time_out(msg)
+                    print('juvenes2')
 
                 # chatter
                 else:

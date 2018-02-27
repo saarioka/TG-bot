@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6f746458-41c5-4e40-8ad1-720436e55d64" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change beforePath="$PROJECT_DIR$/dev/Ruokalistat.py" afterPath="$PROJECT_DIR$/dev/Ruokalistat.py" />
       <change beforePath="$PROJECT_DIR$/dev/db.sqlite3" afterPath="$PROJECT_DIR$/dev/db.sqlite3" />
       <change beforePath="$PROJECT_DIR$/dev/db.sqlite3-shm" afterPath="" />
       <change beforePath="$PROJECT_DIR$/dev/db.sqlite3-wal" afterPath="" />
@@ -18,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="shaq2.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="shaq2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/shaq2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="229" column="82" lean-forward="true" selection-start-line="229" selection-start-column="82" selection-end-line="229" selection-end-column="82" />
+            <state relative-caret-position="-2639">
+              <caret line="63" column="53" lean-forward="true" selection-start-line="63" selection-start-column="53" selection-end-line="63" selection-end-column="53" />
               <folding>
                 <element signature="e#25#36#0" expanded="true" />
               </folding>
@@ -30,14 +30,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ruokalistat.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Ruokalistat.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/Ruokalistat.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="543">
-              <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+            <state relative-caret-position="176">
+              <caret line="26" column="10" lean-forward="false" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
               <folding>
                 <element signature="e#25#36#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="json_food.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Desktop/skvark-Juvenes_food_info-34be9c7/json_food.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-7">
+              <caret line="43" column="56" lean-forward="false" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="food.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Desktop/skvark-Juvenes_food_info-34be9c7/API/food.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-7">
+              <caret line="52" column="38" lean-forward="false" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -52,13 +72,13 @@
       <list>
         <option value="$PROJECT_DIR$/dev/lyhyt.txt" />
         <option value="$PROJECT_DIR$/dev/AI.py" />
-        <option value="$PROJECT_DIR$/dev/Ruokalistat.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/dev/shaq2.py" />
+        <option value="$PROJECT_DIR$/dev/Ruokalistat.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="141" />
     <option name="y" value="-10" />
     <option name="width" value="1442" />
@@ -126,7 +146,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -147,25 +167,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.shaq2">
-    <configuration name="AI" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dev" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="TG-bot" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dev/AI.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
+  <component name="RunManager" selected="Python.json_food">
     <configuration name="Ruokalistat" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -220,6 +222,24 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="json_food" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Desktop/skvark-Juvenes_food_info-34be9c7" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="TG-bot" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Desktop/skvark-Juvenes_food_info-34be9c7/json_food.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="shaq2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -239,19 +259,19 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.AI" />
-      <item index="1" class="java.lang.String" itemvalue="Python.shaq2" />
-      <item index="2" class="java.lang.String" itemvalue="Python.Vote" />
-      <item index="3" class="java.lang.String" itemvalue="Python.Ruokalistat" />
-      <item index="4" class="java.lang.String" itemvalue="Python.ShaqBot" />
+      <item index="0" class="java.lang.String" itemvalue="Python.shaq2" />
+      <item index="1" class="java.lang.String" itemvalue="Python.Vote" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Ruokalistat" />
+      <item index="3" class="java.lang.String" itemvalue="Python.ShaqBot" />
+      <item index="4" class="java.lang.String" itemvalue="Python.json_food" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.shaq2" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Ruokalistat" />
-        <item index="2" class="java.lang.String" itemvalue="Python.ShaqBot" />
-        <item index="3" class="java.lang.String" itemvalue="Python.Vote" />
-        <item index="4" class="java.lang.String" itemvalue="Python.AI" />
+        <item index="1" class="java.lang.String" itemvalue="Python.json_food" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Ruokalistat" />
+        <item index="3" class="java.lang.String" itemvalue="Python.ShaqBot" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Vote" />
       </list>
     </recent_temporary>
   </component>
@@ -281,12 +301,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13751318" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.49789253" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37703142" sideWeight="0.5105374" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37703142" sideWeight="0.5105374" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -426,20 +446,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/Ruokalistat.py">
+    <entry file="file://$USER_HOME$/Desktop/skvark-Juvenes_food_info-34be9c7/API/food.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+        <state relative-caret-position="-7">
+          <caret line="52" column="38" lean-forward="false" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/skvark-Juvenes_food_info-34be9c7/json_food.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="43" column="56" lean-forward="false" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/shaq2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2639">
+          <caret line="63" column="53" lean-forward="true" selection-start-line="63" selection-start-column="53" selection-end-line="63" selection-end-column="53" />
           <folding>
             <element signature="e#25#36#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/shaq2.py">
+    <entry file="file://$PROJECT_DIR$/dev/Ruokalistat.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="229" column="82" lean-forward="true" selection-start-line="229" selection-start-column="82" selection-end-line="229" selection-end-column="82" />
+        <state relative-caret-position="176">
+          <caret line="26" column="10" lean-forward="false" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
           <folding>
             <element signature="e#25#36#0" expanded="true" />
           </folding>
