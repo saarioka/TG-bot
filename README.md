@@ -23,6 +23,8 @@ TODO:
 	ruoka (Juvenes)  
 	admin commands  
 	applications for callback query (on-screen buttons/custom keyboard)  
-	improvements to AI  
+	improvements to AI
+	* ignore replies to older comments
+	* random chance to answers, based on reliability
 	
 Santeri Saariokari 2/2018

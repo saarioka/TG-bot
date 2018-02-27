@@ -205,29 +205,29 @@ class Shaq(telepot.helper.ChatHandler):
                     self.kiitos(msg)
 
                 # Command: lyrics
-                elif msg['text'] == '/lyrics':
+                elif msg['text'] == '/lyrics' or msg['text'] == '/lyrics@mans_not_bot':
                     self.lyrics(msg)
 
                 # Command: hertsi1
-                elif msg['text'] == '/hertsi':
+                elif msg['text'] == '/hertsi' or msg['text'] == '/hertsi@mans_not_bot':
                     self.sender.sendMessage(Hertsi.ruoka(1))
                     self.print_time_out(msg)
                     print('hertsi1')
 
                 # Command: hertsi2
-                elif msg['text'] == '/hertsi2':
+                elif msg['text'] == '/hertsi2' or msg['text'] == '/hertsi2@mans_not_bot':
                     self.sender.sendMessage(Hertsi.ruoka(2))
                     self.print_time_out(msg)
                     print('hertsi2')
 
                 # Command: Reaktori1
-                elif msg['text'] == '/reaktori':
+                elif msg['text'] == '/reaktori' or msg['text'] == '/reaktori@mans_not_bot':
                     self.sender.sendMessage(Reaktori.ruoka(1))
                     self.print_time_out(msg)
                     print('reaktori1')
 
                 # Command: Reaktori2
-                elif msg['text'] == '/reaktori2':
+                elif msg['text'] == '/reaktori2' or msg['text'] == '/reaktori2@mans_not_bot':
                     self.sender.sendMessage(Reaktori.ruoka(2))
                     self.print_time_out(msg)
                     print('reaktori2')
@@ -238,6 +238,7 @@ class Shaq(telepot.helper.ChatHandler):
 
                 # chatter
                 else:
+                    self.bumper += '* '
                     self.bumper += msg['text'] + '\n'
 
                     if msg['date'] > time.time() - 5:
