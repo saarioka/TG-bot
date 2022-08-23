@@ -1,4 +1,5 @@
 # Telegram bot Big Shaq  
+## 2/2018
 
 This is a telegram bot based on the public "Telepot" API, written as an introduction to Python programming.  
 
@@ -27,4 +28,3 @@ TODO:
 	* ignore replies to older comments
 	* random chance to answers, based on reliability
 	
-Santeri Saariokari 2/2018
